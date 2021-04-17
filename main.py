@@ -58,7 +58,12 @@ def send_email(subject, contents):
 	print("Contents:\n{}".format(contents))
 
 def cronjob():
-	req = requests.get(urop_url)
+	req = None
+	try:
+		req = requests.get(urop_url)
+	except Exception as e:
+		send_email("UROP: An Error Occurred Requesting Site", "Check the web server for more information. And that's all you need to know.")
+		print("Error {}".format(e))
 	if(req.status_code == 200):
 		try:
 			html = req.text
