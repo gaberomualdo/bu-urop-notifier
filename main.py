@@ -20,7 +20,7 @@ target_disciplines = ["computer science", "statistics", "business", "economics"]
 email_to = ["romualdo@bu.edu"]
 email_from = "bot@gabrielromualdo.com"
 email_from_password_filepath = "emailpwd.txt"
-check_every = 15 # in minutes
+check_every = 1 # in minutes
 
 already_notified = json.loads(open(already_notified_filepath).read())
 
